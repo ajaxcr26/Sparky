@@ -1,0 +1,9 @@
+# Remaining release scope
+
+This is the complete-path foundation requested at the end of the brief. It is not release 1 acceptance.
+
+Not implemented: Response, Accent, Impact or its layer editor; prompt interpretation; host synchronization; tempo/meter/key controls beyond manual tempo; multitrack import selection and source-byte preservation; advanced chord editor; gap detection; performance gestures, pitch bend, macro editing, effects, glide; 20–30 polished patches; selection/export alignment options; 32-bit float/variable-rate/dry WAV; layer or wrapped-tail export; drag-and-drop; favorites/rename/duplicate candidate/history browser; zoom/scroll/marquee/clipboard/velocity editor/quantize/transpose; generation jobs/progress/cancellation; asynchronous WAV rendering; low-end protection; missing-asset relinking; state migrations beyond version rejection.
+
+The canonical engine still needs richer expression/articulation and per-note property locks, full generation specifications, and explicit history versions. Current grouped locks are per candidate. Preview schedules notes by audio block; immutable prepared event lists and measured performance budgets are still needed before scaling to dense long phrases. A try-lock keeps state edits from blocking the audio callback, but UI changes may cause a short silent block. Candidate selection restarts preview. Rendering is synchronous and intentionally bounded; cancellation does not exist yet.
+
+Before release: split the UI/processor/audio renderer, add a background job system, make immutable prepared event schedules, implement remaining roles one at a time, expand automated acceptance tests, then perform actual Windows FL Studio validation at all required sample rates and buffers. Producers must assess musical quality separately from technical validity.
