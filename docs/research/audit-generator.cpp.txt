@@ -1,0 +1,6 @@
+#include "Engine.h"
+#include <iostream>
+#include <set>
+#include <sstream>
+#include <cmath>
+int main(){auto h=spark::parseChords("Am F C G Am F C G");std::cout<<"density,candidate,onsets,unique_onset_patterns_64_seeds,unique_duration_values,step_or_repeat_percent,leaps_over_fifth_percent\n";for(int d=0;d<5;++d)for(int k=0;k<3;++k){std::set<std::string> rhythms;std::set<int> durations;int count=0,moves=0,steps=0,leaps=0;for(unsigned seed=1;seed<=64;++seed){spark::Spec s;s.end=30720;s.seed=seed;s.density=d;auto c=spark::generate(h,s)[k];count=(int)c.notes.size();std::ostringstream pat;for(size_t i=0;i<c.notes.size();++i){auto&n=c.notes[i];pat<<n.start<<',';durations.insert(n.duration);if(i){int interval=std::abs(n.pitch-c.notes[i-1].pitch);++moves;steps+=interval<=2;leaps+=interval>7;}}rhythms.insert(pat.str());}std::cout<<d<<','<<char('A'+k)<<','<<count<<','<<rhythms.size()<<','<<durations.size()<<','<<100.*steps/moves<<','<<100.*leaps/moves<<'\n';}}
