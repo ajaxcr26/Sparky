@@ -22,3 +22,12 @@ Inspected 2026-10-24 as Markdown source from the public Open Music Theory reposi
 - Rio Leyva: supporting reference (user spelled "rio levya"); verify the intended identity from sources before attributing techniques.
 
 No tutorial titles, creator claims or timestamps have been invented. The current environment denied direct YouTube/Google HTTPS requests, so none of these entries counts as a viewed or read tutorial.
+
+## User-selected primary references
+
+Provided by the user after the initial audit. Titles/credits below are the user's descriptions, not independently verified metadata. Direct retrieval of both URLs was attempted and again denied by the environment proxy (HTTP CONNECT 403); neither video has been watched, heard, transcribed or analyzed yet.
+
+1. [Collaboration reference, beginning at 1:03:36](https://www.youtube.com/watch?v=EH2Lzo74ZvE&t=3816s). User identifies the collaborators as slayr, lucy bedroque, prettifun, egobreak and dabo. Inspect from the selected timestamp first; then seek earlier context only as needed to understand the writing process. Record whose decisions are actually attributable to whom.
+2. [“Moon and the Stars” creation breakdown](https://www.youtube.com/watch?v=o46xuvTJ3cM). User identifies this as a breakdown of how the prettifun track was made and rates it as a strong example of the desired quality. Prioritize this for understanding the target sound; verify the video's actual metadata and credits when access becomes available.
+
+For both: examine the initial MIDI idea, exact rhythmic cell, held versus short notes, octave/register changes, harmonic anchors and tensions, repetition and bar-to-bar development, counterline placement, and the difference between musical writing and effects/sound selection. These are analysis questions, not findings about unseen content. Do not infer a technique from the supplied artist names alone.
