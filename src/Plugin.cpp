@@ -520,11 +520,9 @@ class SparkEditor : public AudioProcessorEditor, private Timer {
         };
         demo.onClick = [this] {
             chords.setText("Am F C G Am F C G");
-            enter.triggerClick();
-            Timer::callAfterDelay(100, [safe = Component::SafePointer<SparkEditor>(this)] {
-                if (safe)
-                    safe->generate.triggerClick();
-            });
+            // Both actions are local and quick; run them in order without a delayed callback.
+            enter.onClick();
+            generate.onClick();
         };
         generate.setColour(TextButton::buttonColourId, Colour(0xffb5f36c));
         generate.setColour(TextButton::textColourOffId, Colour(0xff14200b));

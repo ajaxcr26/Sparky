@@ -76,6 +76,16 @@ int main(int argc, char **argv) {
                         button->onClick();
             if (p.harmony.size() != 4 || p.candidates[0].notes.empty())
                 throw std::runtime_error("Editor entry/generation actions failed");
+            for (int i = 0; i < editor->getNumChildComponents(); ++i)
+                if (auto *button = dynamic_cast<TextButton *>(editor->getChildComponent(i)))
+                    if (button->getButtonText() == "Try demo")
+                        button->onClick();
+            if (p.harmony.size() != 8)
+                throw std::runtime_error("Demo did not load eight bars of harmony");
+            for (const auto &candidate : p.candidates)
+                if (candidate.notes.empty() || candidate.spec.end != 8 * 3840)
+                    throw std::runtime_error(
+                        "Demo did not immediately generate three eight-bar candidates");
             auto before = p.candidates[0].notes;
             p.undo();
             p.undo(true);
